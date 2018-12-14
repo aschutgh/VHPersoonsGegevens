@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:VHPersoonsGegevens"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Label Name="lblFirstName" Margin="10" Content="Voornaam"></Label>
+        <TextBox Name="txtbFirstName" Margin="10"></TextBox>
+        <Label Name="lblLastName" Margin="10" Content="Achternaam"></Label>
+        <TextBox Name="txtbLastName" Margin="10"></TextBox>
+        <Label Name="lblBirthDate" Margin="10" Content="Geboortedatum"></Label>
+        <DatePicker Name="dpBirthDate" Margin="10"></DatePicker>
+        <Label Name="lblGender" Margin="10" Content="Geslacht"></Label>
+    </StackPanel>
 </Window>
