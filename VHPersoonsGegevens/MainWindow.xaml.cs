@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -56,7 +57,7 @@ namespace VHPersoonsGegevens
             AllePersonen.Add(p); // Observable Collection 
             //Represents a dynamic data collection that provides notifications when items get
             //added, removed, or when the whole list is refreshed.
-            dg.ItemsSource = AllePersonen; 
+            dg.ItemsSource = AllePersonen;
         }
     }
 }

@@ -9,11 +9,23 @@
     <!--Het attribuut Loaded kun je gebruiken om bij het laden van het formulier een c# functie automatisch te laten-->
     <!--starten. Deze functie kun je gebruiken voor het initialiseren van je formulier-->
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <StackPanel>
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="2">
+            <MenuItem Header="Bestand">
+                <MenuItem Header="Open" />
+                <MenuItem Header="Opslaan" />
+            </MenuItem>
+        </Menu>
+        
+        <StackPanel Grid.Row="1">
             <Label Name="lblFirstName" Margin="10" Content="Voornaam"></Label>
             <TextBox Name="txtbFirstName" Margin="10"></TextBox>
             <Label Name="lblLastName" Margin="10" Content="Achternaam"></Label>
@@ -27,7 +39,7 @@
             <Button Name="btnShowPerson" Margin="10" Content="Toon persoon" Click="BtnShowPerson_Click"></Button>
             <Label Name="lbl" Margin="10"></Label>
         </StackPanel>
-        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Name="dg" Grid.Column="1">
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Name="dg" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Voornaam" Binding="{Binding Voornaam}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Achternaam" Binding="{Binding Achternaam}"></DataGridTextColumn>
