@@ -15,6 +15,19 @@ namespace VHPersoonsGegevens
         public GeslachtEnum Geslacht { get; set; }
         public DateTime GeboorteDatum { get; set; } = new DateTime(1980, 1, 1);
         public string Land { get; set; }
+
+        public int Leeftijd
+        {
+            get
+            {
+                int leeftijd = DateTime.Now.Year - GeboorteDatum.Year;
+
+                if (GeboorteDatum.AddYears(leeftijd) > DateTime.Now)
+                    leeftijd--;
+
+                return leeftijd;
+            }
+        }
     }
 
 
