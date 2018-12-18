@@ -18,10 +18,10 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Menu Grid.Row="0" Grid.ColumnSpan="2">
+        <Menu Name="FileMenu" Grid.Row="0" Grid.ColumnSpan="2">
             <MenuItem Header="Bestand">
-                <MenuItem Header="Open" />
-                <MenuItem Header="Opslaan" />
+                <MenuItem Name="Open" Header="Open" />
+                <MenuItem Click="Opslaan_Click" Name="Opslaan" Header="Opslaan" />
             </MenuItem>
         </Menu>
         

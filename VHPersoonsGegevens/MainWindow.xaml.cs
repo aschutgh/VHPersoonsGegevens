@@ -59,5 +59,17 @@ namespace VHPersoonsGegevens
             //added, removed, or when the whole list is refreshed.
             dg.ItemsSource = AllePersonen;
         }
+
+        private void Opslaan_Click(object sender, RoutedEventArgs e)
+        {
+            string csvData = "";
+
+            foreach(Persoon p in AllePersonen)
+            {
+                csvData += p.Voornaam + ", " + p.Achternaam + Environment.NewLine;
+            }
+
+            File.WriteAllText("personen.csv", csvData);
+        }
     }
 }
