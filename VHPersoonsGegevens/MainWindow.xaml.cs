@@ -36,6 +36,9 @@ namespace VHPersoonsGegevens
             // fill combobox countries
             var landen = new[] { "Nederland", "Belgie", "Frankrijk" };
             cboxCountry.ItemsSource = landen;
+
+            // DatePicker initialiseren
+            dpBirthDate.SelectedDate = new DateTime(1980, 1, 1);
         }
 
         private void BtnShowPerson_Click(object sender, RoutedEventArgs e)
