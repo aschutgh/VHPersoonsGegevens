@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VHPersoonsGegevens"
     mc:Ignorable="d" Loaded="Window_Loaded" 
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="600" Width="900">
     <!--Het attribuut Loaded kun je gebruiken om bij het laden van het formulier een c# functie automatisch te laten-->
     <!--starten. Deze functie kun je gebruiken voor het initialiseren van je formulier-->
     <Grid>
@@ -27,6 +27,6 @@
             <Button Name="btnShowPerson" Margin="10" Content="Toon persoon" Click="BtnShowPerson_Click"></Button>
             <Label Name="lbl" Margin="10"></Label>
         </StackPanel>
-        <DataGrid Grid.Column="1"></DataGrid>
+        <DataGrid Name="dg" Grid.Column="1"></DataGrid>
     </Grid>
 </Window>

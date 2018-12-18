@@ -46,6 +46,9 @@ namespace VHPersoonsGegevens
             p.GeboorteDatum = dpBirthDate.SelectedDate.Value;
 
             lbl.Content = $"Hallo {p.Voornaam} {p.Achternaam}. " + p.GeboorteDatum.ToString("dd-MM-yyyy");
+            List<Persoon> AllePersonen = new List<Persoon>();
+            AllePersonen.Add(p);
+            dg.ItemsSource = AllePersonen;
         }
     }
 }
