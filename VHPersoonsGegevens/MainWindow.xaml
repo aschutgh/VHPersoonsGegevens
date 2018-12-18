@@ -8,18 +8,24 @@
         Title="MainWindow" Height="600" Width="800">
     <!--Het attribuut Loaded kun je gebruiken om bij het laden van het formulier een c# functie automatisch te laten-->
     <!--starten. Deze functie kun je gebruiken voor het initialiseren van je formulier-->
-    <StackPanel>
-        <Label Name="lblFirstName" Margin="10" Content="Voornaam"></Label>
-        <TextBox Name="txtbFirstName" Margin="10"></TextBox>
-        <Label Name="lblLastName" Margin="10" Content="Achternaam"></Label>
-        <TextBox Name="txtbLastName" Margin="10"></TextBox>
-        <Label Name="lblBirthDate" Margin="10" Content="Geboortedatum"></Label>
-        <DatePicker Name="dpBirthDate" Margin="10"></DatePicker>
-        <Label Name="lblGender" Margin="10" Content="Geslacht"></Label>
-        <ListBox Name="lboxGender" Margin="10"></ListBox>
-        <Label Name="lblCountry" Margin="10" Content="Land"></Label>
-        <ComboBox Name="cboxCountry" Margin="10"></ComboBox>
-        <Button Name="btnShowPerson" Margin="10" Content="Toon persoon" Click="BtnShowPerson_Click"></Button>
-        <Label Name="lbl" Margin="10"></Label>
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Label Name="lblFirstName" Margin="10" Content="Voornaam"></Label>
+            <TextBox Name="txtbFirstName" Margin="10"></TextBox>
+            <Label Name="lblLastName" Margin="10" Content="Achternaam"></Label>
+            <TextBox Name="txtbLastName" Margin="10"></TextBox>
+            <Label Name="lblBirthDate" Margin="10" Content="Geboortedatum"></Label>
+            <DatePicker Name="dpBirthDate" Margin="10"></DatePicker>
+            <Label Name="lblGender" Margin="10" Content="Geslacht"></Label>
+            <ListBox Name="lboxGender" Margin="10"></ListBox>
+            <Label Name="lblCountry" Margin="10" Content="Land"></Label>
+            <ComboBox Name="cboxCountry" Margin="10"></ComboBox>
+            <Button Name="btnShowPerson" Margin="10" Content="Toon persoon" Click="BtnShowPerson_Click"></Button>
+            <Label Name="lbl" Margin="10"></Label>
+        </StackPanel>
+    </Grid>
 </Window>
