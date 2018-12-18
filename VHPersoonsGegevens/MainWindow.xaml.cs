@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace VHPersoonsGegevens
 {
@@ -62,6 +63,9 @@ namespace VHPersoonsGegevens
 
         private void Opslaan_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog dialoog = new SaveFileDialog();
+            dialoog.ShowDialog();
+
             string csvData = "";
 
             foreach(Persoon p in AllePersonen)
@@ -70,7 +74,8 @@ namespace VHPersoonsGegevens
                 csvData += string.Join(",", p.Voornaam, p.Achternaam, p.Land, p.GeboorteDatum, p.Geslacht) + Environment.NewLine;
             }
 
-            File.WriteAllText("personen.csv", csvData);
+            //File.WriteAllText(@"c:\tmp\personen.csv", csvData);
+            File.WriteAllText(dialoog.FileName, csvData);
         }
     }
 }
