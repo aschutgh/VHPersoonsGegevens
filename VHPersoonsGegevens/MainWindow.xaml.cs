@@ -25,6 +25,8 @@ namespace VHPersoonsGegevens
             InitializeComponent();
         }
 
+        List<Persoon> AllePersonen = new List<Persoon>();
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // get genders from GeslachtEnum
@@ -46,9 +48,11 @@ namespace VHPersoonsGegevens
             p.GeboorteDatum = dpBirthDate.SelectedDate.Value;
 
             lbl.Content = $"Hallo {p.Voornaam} {p.Achternaam}. " + p.GeboorteDatum.ToString("dd-MM-yyyy");
-            List<Persoon> AllePersonen = new List<Persoon>();
+            
             AllePersonen.Add(p);
-            dg.ItemsSource = AllePersonen;
+            dg.ItemsSource = null; // brute oplossing
+            dg.ItemsSource = AllePersonen; // laat slechts een keer de collectie AllePersonen zien
+            // oplossing: zet dg.ItemsSource eerst op null
         }
     }
 }
