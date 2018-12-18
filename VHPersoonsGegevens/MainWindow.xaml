@@ -27,5 +27,6 @@
             <Button Name="btnShowPerson" Margin="10" Content="Toon persoon" Click="BtnShowPerson_Click"></Button>
             <Label Name="lbl" Margin="10"></Label>
         </StackPanel>
+        <DataGrid Grid.Column="1"></DataGrid>
     </Grid>
 </Window>
