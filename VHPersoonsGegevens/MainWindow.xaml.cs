@@ -24,5 +24,15 @@ namespace VHPersoonsGegevens
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // get genders from GeslachtEnum
+            lboxGender.ItemsSource = Enum.GetValues(typeof(GeslachtEnum));
+
+            // fill combobox countries
+            var landen = new[] { "Nederland", "Belgie", "Frankrijk" };
+            cboxCountry.ItemsSource = landen;
+        }
     }
 }
