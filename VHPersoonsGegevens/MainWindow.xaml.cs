@@ -34,5 +34,17 @@ namespace VHPersoonsGegevens
             var landen = new[] { "Nederland", "Belgie", "Frankrijk" };
             cboxCountry.ItemsSource = landen;
         }
+
+        private void BtnShowPerson_Click(object sender, RoutedEventArgs e)
+        {
+            var p = new Persoon();
+            p.Voornaam = txtbFirstName.Text;
+            p.Achternaam = txtbLastName.Text;
+            p.Geslacht = (GeslachtEnum)Enum.Parse(typeof(GeslachtEnum), lboxGender.SelectedItem.ToString());
+            p.Land = cboxCountry.Text;
+            p.GeboorteDatum = dpBirthDate.SelectedDate.Value;
+
+            lbl.Content = $"Hallo {p.Voornaam} {p.Achternaam}. " + p.GeboorteDatum.ToString("dd-MM-yyyy");
+        }
     }
 }
