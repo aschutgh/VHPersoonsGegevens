@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace VHPersoonsGegevens
             InitializeComponent();
         }
 
-        List<Persoon> AllePersonen = new List<Persoon>();
+        ObservableCollection<Persoon> AllePersonen = new ObservableCollection<Persoon>();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -49,10 +50,10 @@ namespace VHPersoonsGegevens
 
             lbl.Content = $"Hallo {p.Voornaam} {p.Achternaam}. " + p.GeboorteDatum.ToString("dd-MM-yyyy");
             
-            AllePersonen.Add(p);
-            dg.ItemsSource = null; // brute oplossing
-            dg.ItemsSource = AllePersonen; // laat slechts een keer de collectie AllePersonen zien
-            // oplossing: zet dg.ItemsSource eerst op null
+            AllePersonen.Add(p); // Observable Collection 
+            //Represents a dynamic data collection that provides notifications when items get
+            //added, removed, or when the whole list is refreshed.
+            dg.ItemsSource = AllePersonen; 
         }
     }
 }
