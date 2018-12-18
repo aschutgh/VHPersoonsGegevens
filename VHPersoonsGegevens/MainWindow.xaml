@@ -20,7 +20,7 @@
 
         <Menu Name="FileMenu" Grid.Row="0" Grid.ColumnSpan="2">
             <MenuItem Header="Bestand">
-                <MenuItem Name="Open" Header="Open" />
+                <MenuItem Click="Openen_Click" Name="Openen" Header="Openen" />
                 <MenuItem Click="Opslaan_Click" Name="Opslaan" Header="Opslaan" />
             </MenuItem>
         </Menu>

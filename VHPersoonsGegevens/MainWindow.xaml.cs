@@ -77,5 +77,28 @@ namespace VHPersoonsGegevens
             //File.WriteAllText(@"c:\tmp\personen.csv", csvData);
             File.WriteAllText(dialoog.FileName, csvData);
         }
+
+        private void Openen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialoog = new OpenFileDialog();
+            dialoog.ShowDialog();
+
+            string[] csvData;
+            csvData = File.ReadAllLines(dialoog.FileName);
+
+            foreach (string s in csvData)
+            {
+                Persoon p = new Persoon();
+                string[] personfields = s.Split(',');
+                p.Voornaam = personfields[0];
+                p.Achternaam = personfields[1];
+                p.Land = personfields[2];
+                p.GeboorteDatum = DateTime.Parse(personfields[3]);
+                p.Geslacht = (GeslachtEnum)Enum.Parse(typeof(GeslachtEnum), personfields[4]);
+                AllePersonen.Add(p);
+            }
+            dg.ItemsSource = AllePersonen;
+            
+        }
     }
 }
