@@ -40,6 +40,7 @@ namespace VHPersoonsGegevens
             var p = new Persoon();
             p.Voornaam = txtbFirstName.Text;
             p.Achternaam = txtbLastName.Text;
+            // Hoe werkt de volgende regel?? 
             p.Geslacht = (GeslachtEnum)Enum.Parse(typeof(GeslachtEnum), lboxGender.SelectedItem.ToString());
             p.Land = cboxCountry.Text;
             p.GeboorteDatum = dpBirthDate.SelectedDate.Value;
