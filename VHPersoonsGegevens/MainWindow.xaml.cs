@@ -66,7 +66,8 @@ namespace VHPersoonsGegevens
 
             foreach(Persoon p in AllePersonen)
             {
-                csvData += p.Voornaam + ", " + p.Achternaam + Environment.NewLine;
+                // csvData += p.Voornaam + ", " + p.Achternaam + Environment.NewLine;
+                csvData += string.Join(",", p.Voornaam, p.Achternaam, p.Land, p.GeboorteDatum, p.Geslacht) + Environment.NewLine;
             }
 
             File.WriteAllText("personen.csv", csvData);
