@@ -55,7 +55,7 @@ namespace VHPersoonsGegevens
             p.Land = cboxCountry.Text;
             p.GeboorteDatum = dpBirthDate.SelectedDate.Value;
 
-            lbl.Content = $"Hallo {p.Voornaam} {p.Achternaam}. " + p.GeboorteDatum.ToString("dd-MM-yyyy");
+            //lbl.Content = $"Hallo {p.Voornaam} {p.Achternaam}. " + p.GeboorteDatum.ToString("dd-MM-yyyy");
             
             AllePersonen.Add(p); // Observable Collection 
             //Represents a dynamic data collection that provides notifications when items get

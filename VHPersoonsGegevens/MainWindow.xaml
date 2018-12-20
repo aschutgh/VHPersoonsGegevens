@@ -37,7 +37,7 @@
             <Label Name="lblCountry" Margin="10" Content="Land"></Label>
             <ComboBox Name="cboxCountry" Margin="10"></ComboBox>
             <Button Name="btnShowPerson" Margin="10" Content="Toon persoon" Click="BtnShowPerson_Click"></Button>
-            <Label Name="lbl" Margin="10"></Label>
+            <!--<Label Name="lbl" Margin="10"></Label>-->
         </StackPanel>
         <DataGrid Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Name="dg" Grid.Column="1">
             <DataGrid.Columns>
