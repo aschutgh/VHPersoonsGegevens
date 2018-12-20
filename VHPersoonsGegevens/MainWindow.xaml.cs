@@ -130,5 +130,19 @@ namespace VHPersoonsGegevens
 
             dg.ItemsSource = AlleMannen;
         }
+
+        private void btnShowFemales_Click(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<Persoon> AlleVrouwen = new ObservableCollection<Persoon>();
+
+            var FemaleQuery = from Person in AllePersonen where Person.Geslacht == GeslachtEnum.Vrouw select Person;
+
+            foreach (var Female in FemaleQuery)
+            {
+                AlleVrouwen.Add(Female);
+            }
+
+            dg.ItemsSource = AlleVrouwen;
+        }
     }
 }
