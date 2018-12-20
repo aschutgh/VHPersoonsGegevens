@@ -100,5 +100,19 @@ namespace VHPersoonsGegevens
             dg.ItemsSource = AllePersonen;
             
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult result;
+            result = MessageBox.Show("This application is about to close. You could lose data. Close Application?", "Close Application", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
