@@ -116,5 +116,19 @@ namespace VHPersoonsGegevens
                 e.Cancel = true;
             }
         }
+
+        private void btnShowMales_Click(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<Persoon> AlleMannen = new ObservableCollection<Persoon>();
+
+            var MaleQuery = from Person in AllePersonen where Person.Geslacht == GeslachtEnum.Man select Person;
+
+            foreach(var Male in MaleQuery)
+            {
+                AlleMannen.Add(Male);
+            }
+
+            dg.ItemsSource = AlleMannen;
+        }
     }
 }
