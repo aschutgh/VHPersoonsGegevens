@@ -16,6 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 
+// FIXME: All code should be in English!! Clean up this mess...
+
 namespace VHPersoonsGegevens
 {
     /// <summary>
