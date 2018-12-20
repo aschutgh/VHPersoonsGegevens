@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VHPersoonsGegevens"
-    mc:Ignorable="d" Loaded="Window_Loaded" Closing="Window_Closing"
+    mc:Ignorable="d" Loaded="Window_Loaded" Closing="Window_Closing" WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Title="VHPersoonsGegevens" Height="600" Width="900">
     <!--Het attribuut Loaded kun je gebruiken om bij het laden van het formulier een c# functie automatisch te laten-->
     <!--starten. Deze functie kun je gebruiken voor het initialiseren van je formulier-->
@@ -12,6 +12,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -39,7 +41,19 @@
             <Button Name="btnShowPerson" Margin="10" Content="Toon persoon" Click="BtnShowPerson_Click"></Button>
             <!--<Label Name="lbl" Margin="10"></Label>-->
         </StackPanel>
-        <DataGrid Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Name="dg" Grid.Column="1">
+        
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2">
+            <Button Name="btnMales" Content="Toon Mannen" />
+            <Button Name="btnFemales" Content="Toon Vrouwen" />
+            <Button Name="btnSortAge" Content="Sorteer op leeftijd" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="3">
+            <Button Name="btnSortAgeLimitFLA" Content="Sorteer op leeftijd / Voor- en achternaam en leeftijd" />
+            <Button Name="SearchName" Content="Zoeken op naam" />
+        </StackPanel>
+        
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Name="dg" Grid.Column="1" Grid.RowSpan="3">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Voornaam" Binding="{Binding Voornaam}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Achternaam" Binding="{Binding Achternaam}"></DataGridTextColumn>
