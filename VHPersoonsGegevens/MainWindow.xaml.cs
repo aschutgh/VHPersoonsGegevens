@@ -141,7 +141,13 @@ namespace VHPersoonsGegevens
 
         private void btnSortAge_Click(object sender, RoutedEventArgs e)
         {
+            List<Persoon> OpLeeftijd = new List<Persoon>();
 
+            var AgeQuery = from Person in AllePersonen orderby Person.GeboorteDatum descending select Person;
+
+            OpLeeftijd =  AgeQuery.ToList();
+
+            dg.ItemsSource = OpLeeftijd;
         }
     }
 }
