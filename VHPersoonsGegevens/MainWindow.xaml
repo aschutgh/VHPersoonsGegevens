@@ -45,7 +45,7 @@
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2">
             <Button Name="btnMales" Content="Toon Mannen" Click="btnShowMales_Click"/>
             <Button Name="btnFemales" Content="Toon Vrouwen" Click="btnShowFemales_Click" />
-            <Button Name="btnSortAge" Content="Sorteer op leeftijd" />
+            <Button Name="btnSortAge" Content="Sorteer op leeftijd" Click="btnSortAge_Click" />
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="3">

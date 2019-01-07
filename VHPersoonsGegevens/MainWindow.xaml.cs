@@ -119,30 +119,29 @@ namespace VHPersoonsGegevens
 
         private void btnShowMales_Click(object sender, RoutedEventArgs e)
         {
-            ObservableCollection<Persoon> AlleMannen = new ObservableCollection<Persoon>();
+            List<Persoon> AlleMannen = new List<Persoon>();
 
             var MaleQuery = from Person in AllePersonen where Person.Geslacht == GeslachtEnum.Man select Person;
 
-            foreach(var Male in MaleQuery)
-            {
-                AlleMannen.Add(Male);
-            }
+            AlleMannen = MaleQuery.ToList();
 
             dg.ItemsSource = AlleMannen;
         }
 
         private void btnShowFemales_Click(object sender, RoutedEventArgs e)
         {
-            ObservableCollection<Persoon> AlleVrouwen = new ObservableCollection<Persoon>();
+            List<Persoon> AlleVrouwen = new List<Persoon>();
 
             var FemaleQuery = from Person in AllePersonen where Person.Geslacht == GeslachtEnum.Vrouw select Person;
 
-            foreach (var Female in FemaleQuery)
-            {
-                AlleVrouwen.Add(Female);
-            }
+            AlleVrouwen = FemaleQuery.ToList();
 
             dg.ItemsSource = AlleVrouwen;
+        }
+
+        private void btnSortAge_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
